@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333;
+}
+
+h1 { 
+  font-family: 'Pacifico', cursive;
+  color: #DB3EB1;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(219, 62, 177, 0.1);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.center-wrapper {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: 12px 20px;
+  border: 2px solid #eee;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #41B6E6;
+  box-shadow: 0 0 0 0.2rem rgba(65, 182, 230, 0.25);
+}
+
+button.miami {
+  background-color: #41B6E6 !important;
+  border: none !important;
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+button.miami:hover {
+  background-color: #2da1d1 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(65, 182, 230, 0.3);
+}
+
+/* Player List */
+.list-group {
+  margin-top: 25px;
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 12px 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.badge-danger {
+  background-color: #ff4757 !important;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.badge-danger:hover {
+  background-color: #ff6b81 !important;
+  transform: scale(1.1);
+}
+
+.action_button {
+  background: #DB3EB1;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(219, 62, 177, 0.25);
+}
+
+.action_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(219, 62, 177, 0.4);
+}
+
+.action_button.btn_2 {
+  background: #41b6e6;
+  box-shadow: 0 4px 15px rgba(65, 182, 230, 0.25);
+}
+
+.action_button.btn_2:hover {
+  box-shadow: 0 6px 20px rgba(65, 182, 230, 0.4);
+}
+
+.result_wrapper {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.result_wrapper h3 {
+  color: #888;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.result_wrapper div {
+  font-size: 3rem;
+  color: #DB3EB1;
+  font-weight: 600;
+  margin-top: 10px;
+  word-break: break-all;
+  animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.list-group::-webkit-scrollbar {
+  width: 6px;
+}
+.list-group::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.list-group::-webkit-scrollbar-thumb {
+  background: #ccc; 
+  border-radius: 10px;
+}
+.list-group::-webkit-scrollbar-thumb:hover {
+  background: #aaa; 
+}

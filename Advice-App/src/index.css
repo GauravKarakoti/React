@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #1a202c;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.advice-box {
+  background-color: #f7fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.advice-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #2d3748;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.advice-btn {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.4);
+}
+
+.advice-btn:hover {
+  background-color: #5a67d8;
+}
+
+.advice-btn:active {
+  transform: scale(0.98);
+}
+
+.stats-container {
+  margin-top: 25px;
+  border-top: 1px solid #edf2f7;
+  padding-top: 20px;
+}
+
+.counter-text {
+  font-size: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.counter-text span {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.note-text {
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
