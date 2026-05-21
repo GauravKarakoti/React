@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL_SERV = process.env.REACT_APP_JSON_SERVER_URL;
+const URL_SERV = "/api/the-daily-news";
 export const getPosts = async (prevState, page=1 , order="asc", limit=10) => {
     try {
         const sortParam = order === "desc" ? "-id" : "id";

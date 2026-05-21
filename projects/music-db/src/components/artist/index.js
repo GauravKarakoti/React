@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AlbumList from "./albumList";
 
-const REQ_URL = `${process.env.REACT_APP_DB_URL}/artists`;
+const REQ_URL = `/api/music-db/artists`;
 
 const Artist = () => {
     const [artist, setArtist] = useState('');

@@ -3,7 +3,7 @@ import ArtistsList from "./artistsList";
 import Banner from "./banner";
 import axios from "axios";
 
-const URL_ARTISTS = `${process.env.REACT_APP_DB_URL}/artists`
+const URL_ARTISTS = `/api/music-db/artists`
 
 class Home extends Component {
     state = {
