@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 import Article from "./components/Articles";
 import Teams from "./components/Teams";
 const Routes = () => (
-    <BrowserRouter>
+    <BrowserRouter basename="/nba">
         <Header/>
         <Switch>
             <Route path='/article/:id' component={Article}/>

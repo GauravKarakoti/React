@@ -7,7 +7,7 @@ import PostComponent from "./components/posts";
 
 const AppRoutes = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/the-daily-news">
             <Header/>
             <MainLayout>
                 <Routes> 

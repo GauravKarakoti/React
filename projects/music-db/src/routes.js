@@ -4,7 +4,7 @@ import Home from "./components/home";
 import Artist from "./components/artist";
 
 const AppRoutes = () => (
-    <BrowserRouter>
+    <BrowserRouter basename="/music-db">
         <Header/>
         <Routes>
             <Route path="/artist/:id" element={<Artist />} />
