@@ -9,7 +9,8 @@ const serveApp = (route, folderPath, buildFolder = 'dist') => {
     app.use(route, express.static(fullPath));
     
     // Fallback for client-side routing (React Router) inside the sub-apps
-    app.get(`${route}/*`, (req, res) => {
+    // FIX: Updated for Express v5 wildcard syntax
+    app.get(`${route}/*splat`, (req, res) => {
         res.sendFile(path.join(fullPath, 'index.html'));
     });
 };
@@ -27,7 +28,9 @@ serveApp('/who-pays-the-bill', '/projects/who-pays-the-bill', 'build');
 // 2. Serve the main Showcase app at the root URL
 const showcasePath = path.join(__dirname, 'dist');
 app.use('/', express.static(showcasePath));
-app.get('*', (req, res) => {
+
+// FIX: Updated global catch-all for Express v5
+app.get('/{*splat}', (req, res) => {
     res.sendFile(path.join(showcasePath, 'index.html'));
 });
 
