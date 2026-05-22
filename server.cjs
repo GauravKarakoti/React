@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const jsonServer = require('json-server'); // <-- Import json-server
+const jsonServer = require('json-server');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -8,10 +8,16 @@ const PORT = process.env.PORT || 8080;
 // ==========================================
 // 1. JSON Server API Routes
 // ==========================================
-// Apply default middlewares (logger, CORS, etc.)
 app.use(jsonServer.defaults());
 
-// Mount each project's db.json onto a dedicated API path
+// ADD THIS MIDDLEWARE: Prevent caching on all API routes to resolve the 304 data issues
+app.use('/api', (req, res, next) => {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '-1');
+    next();
+});
+
 app.use('/api/music-db', jsonServer.router(path.join(__dirname, 'projects/music-db/db.json')));
 app.use('/api/nba', jsonServer.router(path.join(__dirname, 'projects/nba/db.json')));
 app.use('/api/the-daily-news', jsonServer.router(path.join(__dirname, 'projects/the-daily-news/db.json')));
@@ -19,14 +25,21 @@ app.use('/api/the-daily-news', jsonServer.router(path.join(__dirname, 'projects/
 // ==========================================
 // 2. React Apps Static File Serving
 // ==========================================
-// Helper function to serve static directories
 const serveApp = (route, folderPath, buildFolder = 'dist') => {
     const fullPath = path.join(__dirname, folderPath, buildFolder);
-    app.use(route, express.static(fullPath));
     
-    // Fallback for client-side routing (React Router) inside the sub-apps
-    // FIX: Updated for Express v5 wildcard syntax
+    // UPDATE THIS: Add headers to let JS/CSS cache, but force index.html to revalidate
+    app.use(route, express.static(fullPath, {
+        setHeaders: (res, filePath) => {
+            if (filePath.endsWith('index.html')) {
+                res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+            }
+        }
+    }));
+    
+    // UPDATE THIS: Apply cache-control to the client-side routing fallback
     app.get(`${route}/*splat`, (req, res) => {
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
         res.sendFile(path.join(fullPath, 'index.html'));
     });
 };

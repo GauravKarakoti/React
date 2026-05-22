@@ -3,7 +3,7 @@ import appReducers from './reducers';
 import promiseMiddleware from 'redux-promise';
 
 const ReduxStore = () => {
-    const composedEnhancers = window.__REDUX_DEVTOOLS_ENTENSION_COMPOSE__ || compose;
+    const composedEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const store = createStore(
         appReducers,
         composedEnhancers(applyMiddleware(promiseMiddleware))
