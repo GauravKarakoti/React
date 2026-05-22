@@ -7,7 +7,7 @@
     "start": "node server.cjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:all": "npm run build && npm i && cd projects/Solana-Token-Launchpad && yarn install && npm run build && cd ../Advice-App && npm i && npm run build && cd ../music-db && npm i && npm run build && cd ../nba && npm i && npm run build && cd ../Solana-Faucet && yarn install && npm run build && cd ../the-daily-news && npm i && npm run build && cd ../who-pays-the-bill && npm i && npm run build",
+    "build:all": "npm i && npm run build && cd projects/Solana-Token-Launchpad && yarn install && npm run build && cd ../Advice-App && npm i && npm run build && cd ../music-db && npm i && npm run build && cd ../nba && npm i && npm run build && cd ../Solana-Faucet && yarn install && npm run build && cd ../the-daily-news && npm i && npm run build && cd ../who-pays-the-bill && npm i && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
