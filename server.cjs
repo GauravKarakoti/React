@@ -10,11 +10,20 @@ const PORT = process.env.PORT || 8080;
 // ==========================================
 app.use(jsonServer.defaults());
 
-// ADD THIS MIDDLEWARE: Prevent caching on all API routes to resolve the 304 data issues
 app.use('/api', (req, res, next) => {
     res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
     res.set('Pragma', 'no-cache');
     res.set('Expires', '-1');
+
+    // FIX FOR EXPRESS 5: Make req.query mutable so json-server can delete _page, _sort, etc.
+    const mutableQuery = { ...req.query };
+    Object.defineProperty(req, 'query', {
+        value: mutableQuery,
+        configurable: true,
+        writable: true,
+        enumerable: true
+    });
+
     next();
 });
 
