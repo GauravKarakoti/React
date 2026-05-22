@@ -24,7 +24,7 @@ const Artist = () => {
             <div className="artist_bio">
                 <div className="avatar">
                     <span style={{
-                        background: `url('/images/covers/${artist.cover}.jpg') no-repeat`
+                        background: `url('${process.env.PUBLIC_URL}/images/covers/${artist.cover}.jpg') no-repeat`
                     }}></span>
                 </div>
                 <div className="bio">

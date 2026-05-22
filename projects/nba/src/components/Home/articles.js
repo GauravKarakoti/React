@@ -33,7 +33,7 @@ const HomeArticles = () => {
                                     <div
                                         className="block_image"
                                         style={{
-                                            background: `url(/images/blocks/${article.image}) no-repeat`
+                                            background: `url(${process.env.PUBLIC_URL}/images/blocks/${article.image}) no-repeat`
                                         }}
                                     ></div>
                                 </div>

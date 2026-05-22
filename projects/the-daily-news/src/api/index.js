@@ -3,9 +3,8 @@ import axios from "axios";
 const URL_SERV = "/api/the-daily-news";
 export const getPosts = async (prevState, page=1 , order="asc", limit=10) => {
     try {
-        const sortParam = order === "desc" ? "-id" : "id";
         // http://localhost:3004/posts?_page=1&_limit=6&_order=desc&_sort=id
-        const response = await axios.get(`${URL_SERV}/posts?_page=${page}&_per_page=${limit}&_sort=${sortParam}`);
+        const response = await axios.get(`${URL_SERV}/posts?_page=${page}&_limit=${limit}&_order=order&_sort=id`);
         
         console.log("Server response:", response.data);
 

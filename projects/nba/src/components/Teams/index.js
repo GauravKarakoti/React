@@ -37,7 +37,7 @@ class Teams extends Component {
                     className="team_item"
                     onClick={() => this.showModalTeam(item)}
                 >
-                    <img alt={item.name} src={`/images/teams/${item.logo}`}/>
+                    <img alt={item.name} src={`${process.env.PUBLIC_URL}/images/teams/${item.logo}`}/>
                 </div>
             </CSSTransition>
         ))

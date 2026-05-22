@@ -9,7 +9,7 @@ class Poll extends Component {
         error: false
     }
     getPoll() {
-        axios.get(`${URL_TEAMS}?poll=true&_sort=-count`)
+        axios.get(`${URL_TEAMS}?poll=true&_sort=count&_order=desc`)
             .then(response => {
                 const data = Array.isArray(response.data) ? response.data : (response.data.data || []);
                 this.setState({
@@ -50,7 +50,7 @@ class Poll extends Component {
                 className="poll_item"
                 onClick={() => this.addCount(item.count, item.id)}
             >
-                <img alt={item.team} src={`/images/teams/${item.logo}`}/>
+                <img alt={item.team} src={`${process.env.PUBLIC_URL}/images/teams/${item.logo}`}/>
                 <h4>{position[index]}</h4>
                 <div>
                     {item.count} votes

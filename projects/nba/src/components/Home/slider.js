@@ -36,7 +36,7 @@ const HomeSlider = () => {
                                     <div
                                         className="item_slider"
                                         style={{
-                                            background: `url(/images/covers/${item.cover})`
+                                            background: `url(${process.env.PUBLIC_URL}/images/covers/${item.cover})`
                                         }}
                                     >
                                         <div className="caption">

@@ -9,7 +9,7 @@ const ArtistsList = (props) => {
                     key={item.id}
                     className="artist_item"
                     style={{
-                        background: `url('/images/covers/${item.cover}.jpg')`
+                        background: `url('${process.env.PUBLIC_URL}/images/covers/${item.cover}.jpg')`
                     }}
                 >
                     <div>{item.name}</div>
