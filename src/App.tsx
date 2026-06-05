@@ -58,6 +58,13 @@ const projects: Project[] = [
     description: 'A simple application fetching random pieces of advice.',
     tags: ['API'],
     localPort: 5173
+  },
+  {
+    id: 'library',
+    name: 'Library',
+    description: 'A library that manages books.',
+    tags: ['Props'],
+    localPort: 5173
   }
 ];
 

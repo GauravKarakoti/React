@@ -3,7 +3,7 @@ const path = require('path');
 const jsonServer = require('json-server');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 // ==========================================
 // 1. JSON Server API Routes
@@ -61,6 +61,7 @@ serveApp('/music-db', '/projects/music-db', 'build');
 serveApp('/nba', '/projects/nba', 'build');
 serveApp('/the-daily-news', '/projects/the-daily-news', 'build');
 serveApp('/who-pays-the-bill', '/projects/who-pays-the-bill', 'build');
+serveApp('/library', '/projects/library', 'build');
 
 // Serve the main Showcase app at the root URL
 const showcasePath = path.join(__dirname, 'dist');
