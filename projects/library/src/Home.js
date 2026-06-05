@@ -1,26 +1,31 @@
-export default Home = () => {
+import './Card.css';
+
+const Home = () => {
     return (
-        <div className="Home">
-            <h2>Homepage</h2><br/>
-            <Library
-                Title="To Kill The Mockingbird"
-                Author="Harper Lee"
-                description="A novel about the serious issues of rape and racial inequality."
-                Date="1960"
-            />
-            <Library
-                Title="The Great Gatsby"
-                Author="F. Scott Fitzgerald"
-                description="A novel about the American dream and the disillusionment that comes with it."
-                Date="1925"
-            />
-            <Library
-                Title="1984"
-                Author="George Orwell"
-                description="A dystopian novel about totalitarianism and surveillance."
-                Date="1949"
-            />
-        </div>
+        <>
+            <h1 className="title">📚 My Library</h1>
+            <div className="Home">
+                <h2>Homepage</h2><br/>
+                <Library
+                    Title="To Kill The Mockingbird"
+                    Author="Harper Lee"
+                    description="A novel about the serious issues of rape and racial inequality."
+                    Date="1960"
+                />
+                <Library
+                    Title="The Great Gatsby"
+                    Author="F. Scott Fitzgerald"
+                    description="A novel about the American dream and the disillusionment that comes with it."
+                    Date="1925"
+                />
+                <Library
+                    Title="1984"
+                    Author="George Orwell"
+                    description="A dystopian novel about totalitarianism and surveillance."
+                    Date="1949"
+                />
+            </div>
+        </>
     )
 }
 const Library = (props) => {
@@ -33,3 +38,5 @@ const Library = (props) => {
         </div>
     )
 }
+
+export default Home;
