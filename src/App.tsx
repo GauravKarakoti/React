@@ -64,7 +64,7 @@ const projects: Project[] = [
     name: 'Library',
     description: 'A library that manages books.',
     tags: ['Props'],
-    localPort: 5173
+    localPort: 3004
   }
 ];
 

@@ -5,7 +5,6 @@ const Home = () => {
         <>
             <h1 className="title">📚 My Library</h1>
             <div className="Home">
-                <h2>Homepage</h2><br/>
                 <Library
                     Title="To Kill The Mockingbird"
                     Author="Harper Lee"
