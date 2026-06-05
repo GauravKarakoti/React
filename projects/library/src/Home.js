@@ -1,4 +1,4 @@
-const Home = () => {
+export default Home = () => {
     return (
         <div className="Home">
             <h2>Homepage</h2><br/>
