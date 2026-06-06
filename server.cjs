@@ -3,7 +3,7 @@ const path = require('path');
 const jsonServer = require('json-server');
 
 const app = express();
-const PORT = 8081;
+const PORT = 8080;
 
 // ==========================================
 // 1. JSON Server API Routes
