@@ -65,6 +65,13 @@ const projects: Project[] = [
     description: 'A library that manages books.',
     tags: ['Props'],
     localPort: 3004
+  },
+  {
+    id: 'ethereum-wallet-adapter',
+    name: 'Ethereum Wallet Adapter',
+    description: 'Demonstrates multiple wallet connection to send funds.',
+    tags: ['Ethereum', 'Wallet Adapter'],
+    localPort: 5176
   }
 ];
 

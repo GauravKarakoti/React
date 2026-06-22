@@ -62,6 +62,7 @@ serveApp('/nba', '/projects/nba', 'build');
 serveApp('/the-daily-news', '/projects/the-daily-news', 'build');
 serveApp('/who-pays-the-bill', '/projects/who-pays-the-bill', 'build');
 serveApp('/library', '/projects/library', 'build');
+serveApp('/ethereum-wallet-adapter', '/projects/Ethereum-Wallet-Adapter', 'dist');
 
 // Serve the main Showcase app at the root URL
 const showcasePath = path.join(__dirname, 'dist');

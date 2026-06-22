@@ -62,7 +62,7 @@ function MyAddress() {
         <span className="label">Balance</span>
         {isPending && <span className="value">Loading balance...</span>}
         {isError && <span className="value error">Error fetching balance.</span>}
-        {data && <span className="value highlight">{data?.value.toString()} ETH</span>}
+        {data && <span className="value highlight">{(data?.value / BigInt(1000000000000000000)).toString()} ETH</span>}
       </div>
     </div>
   );
