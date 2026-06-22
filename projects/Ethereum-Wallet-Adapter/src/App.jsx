@@ -1,4 +1,4 @@
-import { createConfig, http, injected, useAccount, useBalance, useConnect, useSendTransaction, WagmiProvider } from 'wagmi';
+import { createConfig, http, injected, useAccount, useBalance, useDisconnect, useConnect, useSendTransaction, WagmiProvider } from 'wagmi';
 import { mainnet } from 'viem/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { parseEther } from 'viem';
@@ -70,6 +70,18 @@ function MyAddress() {
 
 function WalletConnector() {
   const { connectors, connect } = useConnect();
+  const { disconnect } = useDisconnect();
+  const { isConnected } = useAccount();
+
+  if (isConnected) {
+    return (
+      <div className="connector-group">
+        <button className="btn-connect" onClick={() => disconnect()}>
+          Disconnect
+        </button>
+      </div>
+    );
+  }
   
   return (
     <div className="connector-group">
